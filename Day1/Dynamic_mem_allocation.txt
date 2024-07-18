@@ -1,0 +1,66 @@
+1.Which of the following statements is true about malloc/calloc ?
+A. After a call of a malloc/calloc it returns the address of the memory
+block which can be used to store data.
+B. Return type of function is void pointer which can not be converted
+to required type 
+C. After call of function if memory is not available function returns 
+NULL
+D. Memory is given from stack section
+Answer: C
+
+2.
+Find the outcome of the following code:
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+int *ptr=NULL;
+ptr = (int *) malloc(sizeof(int)); 
+*ptr = 10;
+ptr = realloc(ptr,sizeof(int) * 3);
+ptr++;
+*ptr = 20;
+ptr--;
+free(ptr);
+return 0;
+}
+A. Ptr is Dangling Pointer
+B. Memory Leakage
+C. CompileTime Error
+D. Ptr Null Pointer
+Answer: A
+
+4.What is the output of the following code:
+#define PI 0
+#define pi 3.14
+int main()
+{
+#if defined(PI)
+#undef PI
+#define PI pi
+printf("PI = %.2f",PI);
+#endif
+return 0;
+}
+A. 0
+B. 3.14
+C. Garbage Value
+D. Compile Time Error
+Answer: B
+
+4.Which statement is correct for below given code?
+#include<stdio.h>
+int main()
+{
+#if 1
+printf("Preprocessor-true");
+#else
+printf("Preprocessor-false");
+#endif
+}
+A. Here the compiler will compile each line from source code.
+B. Compiler will take the decision based on expression which part of 
+code to be compiled, true block or false block.
+C. Preprocessor will forward only true block code to the compiler.
+D. None of these
+Answer: C
